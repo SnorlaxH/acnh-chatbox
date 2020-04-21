@@ -1,23 +1,4 @@
 /* (c) 2020 snorlaxh - MIT */
-
-@font-face {
-    font-family: 'Daum';
-    font-style: normal;
-    font-weight: 400;
-    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/daum/Daum/Daum-Regular.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/daum/Daum/Daum-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Daum';
-    font-style: normal;
-    font-weight: 700;
-    src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/daum/Daum/Daum-SemiBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/daum/Daum/Daum-SemiBold.woff') format('woff');
-}
-
-:root {
-    --message-height: 7rem;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -31,7 +12,7 @@ html {
 }
 
 body {
-    font-family: 'Daum', sans-serif;
+    font-family: '$font_face', sans-serif;
     position: absolute;
     bottom: 0;
     margin: 0;
@@ -51,6 +32,7 @@ body {
     position: relative;
     margin: 0.25rem;
     width: calc(100% - 0.5rem);
+    height: calc(50% - 0.5rem);
     animation: fadeOut 1000ms ease $message_hide_delays forwards;
 }
 
@@ -113,8 +95,10 @@ body {
     display: flex;
     position: relative;
     min-height: var(--message-height);
-    background: url(https://snorlaxh.github.io/acnh-chatbox/acnh_bg.png);
-    background-size: 100% 100%;
+    background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='레이어_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 960 560' style='enable-background:new 0 0 960 560;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FEF8E3;%7D%0A%3C/style%3E%3Cpath class='st0' d='M296.4,167.84c26.76-1.73,55.54-0.49,84.26-1.39c57.05-1.79,114.09-0.75,171.13-0.54 c18.24,0.07,36.67-1.04,54.76,1c22.93,2.59,45.85,1.88,68.76,2.93c11.29,0.52,22.56,0.32,33.84,0.72 c13.39,0.48,26.73,1.58,40.07,2.87c7.07,0.68,14.21,0.26,21.34,1c12.48,1.29,24.97,2.45,37.35,4.54c7.97,1.35,15.88,3.06,23.83,4.54 c2.64,0.49,5.29,1.06,7.41,2.68c2.73,2.08,5.92,3.22,9.03,4.06c17.42,4.73,31.14,14.76,39.23,30.53c7.31,14.25,9.08,29.8,4.15,45.75 c-3.77,12.2-10.86,22.16-19.02,31.59c-4.04,4.67-7.91,9.47-8.83,15.79c-0.8,5.48,1.31,10.66,2.23,15.96 c1.88,10.88,3.37,22.05-3.81,31.51c-5.09,6.71-12.01,11.84-20.11,14.89c-14.18,5.32-28.88,8.03-43.97,9.57 c-18.66,1.89-37.32,2.53-56.04,3.13c-8.44,0.27-16.9,0.37-25.34,0.71c-21.92,0.87-43.88,0.42-65.77,1.29 c-15.29,0.6-30.59-0.26-45.81,0.83c-22.27,1.6-44.56-0.12-66.78,1c-35.58,1.79-71.17,1.14-106.72,0.54 c-21.59-0.36-43.23,0.49-64.77-0.87c-18.46-1.16-36.92,0.29-55.3-0.99c-14.46-1-28.94,0.22-43.31-1.01 c-11.81-1.01-23.6,0.07-35.33-0.89c-17.05-1.4-34.18-0.19-51.17-1.96c-18.71-1.95-37.62-2.85-55.66-8.92 c-10.67-3.59-20.66-8.08-26.48-18.74c-4.51-8.26-3.69-16.96-2.96-25.66c0.37-4.4,1.84-8.7,2.5-13.09c1.42-9.51-3.9-16.45-9.46-23.12 c-7.56-9.08-14.79-18.44-18.32-29.83c-5.91-19.08-7.61-38.36,4.94-55.53c8.13-11.13,18.65-19.42,33.08-22.77 c12.7-2.95,25.18-6.88,38.15-8.74c13.54-1.95,27.02-4.21,40.61-5.88c15.06-1.84,30.31-2.14,45.22-5.5c5.74-1.29,11.93-0.98,17.81-1 C265.57,168.79,279.96,166.78,296.4,167.84z'/%3E%3C/svg%3E%0A");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 1.5rem 0.875rem 0.875rem 0.875rem;
     color: #000;
     font-weight: 400;
