@@ -1,4 +1,8 @@
 /* (c) 2020 snorlaxh - MIT */
+:root{
+    --message-height: 7rem;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -30,7 +34,7 @@ body {
 
 #log>div {
     position: relative;
-    margin: 0.25rem;
+    margin: 1rem 0.25rem;
     width: calc(100% - 0.5rem);
     height: calc(50% - 0.5rem);
     animation: fadeOut 1000ms ease $message_hide_delays forwards;
@@ -99,7 +103,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 1.5rem 0.875rem 0.875rem 0.875rem;
+    padding: 2rem;
     color: #000;
     font-weight: 400;
     overflow: hidden;
