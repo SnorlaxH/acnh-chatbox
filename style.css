@@ -103,13 +103,25 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 2rem;
+    padding: 4rem 6rem;
     color: #000;
     font-weight: 400;
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
+
+/* 이모티콘 영역 */
+.message .emote_wrap {
+    display: block;
+    width: 60px;
+}
+
+.message .emote_wrap .emoticon{
+    transform: scale(2);
+}
+/* 이모티콘 영역 */
 
 @keyframes next-triangle {
     from,
