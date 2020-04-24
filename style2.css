@@ -1,0 +1,160 @@
+/* (c) 2020 snorlaxh - MIT */
+
+:root {
+    --message-height: 7rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: calc($font_sizepx / 20 * 16);
+    overflow: hidden;
+}
+
+body {
+    font-family: '$font_face', sans-serif;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+#log {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5rem;
+    word-wrap: break-word;
+}
+
+#log>div {
+    position: relative;
+    margin: 1rem 0.25rem;
+    width: calc(100% - 0.5rem);
+    height: calc(50% - 0.5rem);
+    animation: fadeOut 1000ms ease $message_hide_delays forwards;
+}
+
+#log>div:last-child::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    margin-bottom: -0.75rem;
+    left: 50%;
+    border-top: 0.4375rem solid transparent;
+    border-bottom: 0.4375rem solid transparent;
+    border-left: 0.75rem solid #B27F05;
+    animation: 1250ms next-triangle infinite;
+    z-index: 100;
+    transform: rotate(90deg)
+}
+
+.meta {
+    position: relative;
+    display: flex;
+    min-width: 10rem;
+    align-items: flex-end;
+    margin: 0 0.25rem;
+    font-weight: 700;
+}
+
+.name {
+    position: absolute;
+    top: 0;
+    order: 1;
+    text-align: center;
+    border-radius: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: auto;
+    padding: 0.25rem 1.5rem;
+    color: #441D13 !important;
+    font-size: 1.125rem;
+    background: #DE852E;
+    z-index: 10;
+    transform: rotate(-5deg);
+}
+
+.badge {
+    display: none;
+    order: 2;
+    width: 1.375rem;
+    height: 1.375rem;
+    border: 0.125rem solid #fff;
+    border-radius: 50%;
+    margin: 0 0 0.25rem 0;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.75);
+}
+
+.colon {
+    display: none;
+}
+
+.message {
+    display: flex;
+    position: relative;
+    min-height: var(--message-height);
+    padding: 4rem 6rem;
+    color: #000;
+    font-weight: 400;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    word-break: break-all;
+}
+
+.message::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 90%;
+    height: 70%;
+    background: #FFF9E4;
+    border-radius: 100px;
+    z-index: -1;
+}
+
+.message::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 87%;
+    height: 50%;
+    background: #FFF9E4;
+    border-radius: 130px 130px 60px 60px;
+    z-index: -1;
+}
+
+
+/* 이모티콘 영역 */
+
+.message .emote_wrap {
+    display: block;
+    width: 60px;
+}
+
+.message .emote_wrap .emoticon {
+    transform: scale(2);
+}
+
+
+/* 이모티콘 영역 */
+
+@keyframes next-triangle {
+    from,
+    to {
+        bottom: 0.75rem;
+    }
+    50% {
+        bottom: 0.5rem;
+    }
+}
